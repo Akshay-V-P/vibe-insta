@@ -5,14 +5,57 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{title}}</title>
   <link href="/css/tailwind.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-  <header class="bg-white shadow p-4">
-    <div class="max-w-4xl mx-auto">Vibe Insta</div>
+<body>
+  <header class="topbar">
+    <div class="icon">📷</div>
+    <div class="logo">Vibe Insta</div>
+    <div class="icons">
+      <div class="icon">➕</div>
+      <div class="icon">💬</div>
+      <div class="icon">❤️</div>
+    </div>
   </header>
-  <main class="max-w-4xl mx-auto p-4">
-    <h1 class="text-2xl font-bold">Welcome to Vibe Insta</h1>
-    <p class="mt-2">Start building your feed.</p>
+
+  <main class="container">
+    {{#if posts}}
+      {{#each posts}}
+        <article class="card">
+          <div class="card-header">
+            <div class="avatar">
+              {{#if this.author.avatar}}
+                <img src="/{{this.author.avatar}}" alt="avatar">
+              {{else}}
+                <img src="/images/default-avatar.png" alt="avatar">
+              {{/if}}
+            </div>
+            <div>
+              <div class="username">{{#if this.author}}{{this.author.username}}{{else}}Unknown{{/if}}</div>
+              <div class="muted">{{formatDate this.createdAt}}</div>
+            </div>
+          </div>
+
+          {{#if this.image}}
+            <img class="post-image" src="/{{this.image}}" alt="post image">
+          {{else}}
+            <div class="post-image"></div>
+          {{/if}}
+
+          <div class="icons-row">
+            <div class="action"><img src="/icons/heart.svg" alt="like"></div>
+            <div class="action"><img src="/icons/comment.svg" alt="comment"></div>
+            <div class="action"><img src="/icons/send.svg" alt="share"></div>
+          </div>
+
+          <div class="card-body">
+            <div class="caption"><strong>{{#if this.author}}{{this.author.username}}{{/if}}</strong> {{this.caption}}</div>
+          </div>
+        </article>
+      {{/each}}
+    {{else}}
+      <div class="no-posts">No posts yet — be the first to post!</div>
+    {{/if}}
   </main>
   <script src="/js/main.js"></script>
 </body>

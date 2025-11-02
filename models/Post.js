@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 
+// Ensure User model is registered before populate() is used.
+// This avoids MissingSchemaError when Post schema references 'User'.
+require('./User');
+
 const postSchema = new mongoose.Schema({
   author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   image: String,
