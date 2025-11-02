@@ -1,0 +1,8 @@
+<div class="max-w-md mx-auto mt-8">
+  <form method="post" action="/auth/login" class="bg-white p-4 shadow">
+    {{#if error}}<div class="text-red-600">{{error}}</div>{{/if}}
+    <div><label>Email</label><input type="email" name="email" required></div>
+    <div><label>Password</label><input type="password" name="password" required></div>
+    <div><button type="submit" class="btn">Login</button></div>
+  </form>
+</div>

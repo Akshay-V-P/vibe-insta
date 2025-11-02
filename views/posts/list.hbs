@@ -1,0 +1,8 @@
+<div class="space-y-4">
+  {{#each posts}}
+  <article class="bg-white shadow p-4">
+    <div>{{this.caption}}</div>
+    {{#if this.image}}<img src="/{{this.image}}" alt="post image" class="mt-2" />{{/if}}
+  </article>
+  {{/each}}
+</div>
