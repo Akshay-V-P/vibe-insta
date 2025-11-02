@@ -1,0 +1,61 @@
+# Node
+node_modules/
+# Logs
+logs/
+*.log
+npm-debug.log*
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+# Environment files
+.env
+.env.*
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+# Build folders
+dist/
+build/
+# Coverage
+coverage/
+.nyc_output/
+# Next.js
+.next/
+# Parcel
+.cache/
+.parcel-cache/
+# Temp
+tmp/
+temp/
+# Test results
+coverage/
+# Misc
+.cache/
+*.tgz
+# Yarn / pnpm
+.pnpm-store/
+# Logs directory inside mvc
+mvc/logs/
+# npm debug
+yarn-debug.log*
+yarn-error.log*
+# Optional lockfiles (uncomment if you don't want to commit them)
+# package-lock.json
+# pnpm-lock.yaml
+# IDE history
+.history/
+# eslint cache
+.eslintcache
+# Mac files
+Icon?
+# Windows image file cache
+Thumbs.db
+# End
